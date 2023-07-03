@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyderabad Jobs</title>
+  <!-- Include Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Bengaluru Jobs</h1>
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b">Date</th>
+          <th class="py-2 px-4 border-b">Company</th>
+          <th class="py-2 px-4 border-b">Title</th>
+          <th class="py-2 px-4 border-b">Eligibility</th>
+          <th class="py-2 px-4 border-b">Address</th>
+          <th class="py-2 px-4 border-b">Email</th>
+          <th class="py-2 px-4 border-b">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs_list %}
+        <tr>
+          <td class="py-2 px-4 border-b">{{ job.date }}</td>
+          <td class="py-2 px-4 border-b">{{ job.company }}</td>
+          <td class="py-2 px-4 border-b">{{ job.title }}</td>
+          <td class="py-2 px-4 border-b">{{ job.eligibility }}</td>
+          <td class="py-2 px-4 border-b">{{ job.address }}</td>
+          <td class="py-2 px-4 border-b">{{ job.email }}</td>
+          <td class="py-2 px-4 border-b">{{ job.PhoneNumber }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

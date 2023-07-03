@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- Include Tailwind CSS CDN -->
+  {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="flex flex-col items-center">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Hyderabad -->
+      <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-6">
+        <img src="https://images.unsplash.com/photo-1551161242-b5af797b7233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1451&q=80" alt="Hyderabad" class="w-72 h-72 object-cover rounded-lg">
+        <div class="mt-4">
+          <h2 class="text-lg font-bold">Hyderabad</h2>
+          <p class="text-gray-700">Explore job opportunities in Hyderabad. Find exciting opportunities in the city known for its rich history and technology industry.</p>
+        </div>
+        <a href="{% url 'hydJobs_view' %}" class="btn bg-red-500 hover:bg-red-600 text-white mt-4 px-6 py-2 rounded-full">Hyderabad Jobs</a>
+      </div>
+      <!-- Bengaluru -->
+      <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-6">
+        <img src="https://media.istockphoto.com/id/1315858882/photo/close-view-of-vidhana-soudha-with-a-cloudy-blue-sky-at-bangalore-karnataka-india.jpg?s=2048x2048&w=is&k=20&c=EdBUqVXyyYZxRH5ZpLQYqFdG85_SP3VaWV3ZYkFLZE0=" alt="Bengaluru" class="w-72 h-72 object-cover rounded-lg">
+        <div class="mt-4">
+          <h2 class="text-lg font-bold">Bengaluru</h2>
+          <p class="text-gray-700">Discover job opportunities in Bengaluru, the Silicon Valley of India. Explore the vibrant tech industry and career prospects in this bustling city.</p>
+        </div>
+        {% comment %} <button class="btn bg-blue-500 hover:bg-blue-600 text-white mt-4 px-6 py-2 rounded-full">Bengaluru Jobs</button> {% endcomment %}
+        <a href="{% url 'bengalurujobs_view' %}" class="btn bg-red-500 hover:bg-red-600 text-white mt-4 px-6 py-2 rounded-full">Bengaluru Jobs</a>
+      </div>
+      <!-- Pune -->
+      <div class="flex flex-col items-center bg-white rounded-lg shadow-lg p-6">
+        <img src="https://media.istockphoto.com/id/1184398225/photo/growing-asian-cities-night-view-of-pune-city-in-india-during-diwali-festival.jpg?s=2048x2048&w=is&k=20&c=jQdWp6O6_hgvmHfdzDn-_BJeHUo1B9tlp91w8IYdsHc=" alt="Pune" class="w-72 h-72 object-cover rounded-lg">
+        <div class="mt-4">
+          <h2 class="text-lg font-bold">Pune</h2>
+          <p class="text-gray-700">Find exciting job opportunities in Pune. Known as the Oxford of the East, Pune offers a blend of educational institutions and career prospects.</p>
+        </div>
+        {% comment %} <button class="btn bg-green-500 hover:bg-green-600 text-white mt-4 px-6 py-2 rounded-full">Pune Jobs</button> {% endcomment %}
+        <a href="{% url 'punejobs_view' %}" class="btn bg-red-500 hover:bg-red-600 text-white mt-4 px-6 py-2 rounded-full">Pune Jobs</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
