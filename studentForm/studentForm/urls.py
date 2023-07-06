@@ -1,5 +1,5 @@
 """
-URL configuration for formProject2 project.
+URL configuration for studentForm project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from formApp import views
+from studentApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('student/',views.studentInputView)
+    path('stu/',views.feedbackview)
 ]
