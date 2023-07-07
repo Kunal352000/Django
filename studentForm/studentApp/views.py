@@ -16,6 +16,6 @@ def feedbackview(request):
             print("Email: ",form.cleaned_data['email'])
             print("Feedback: ",form.cleaned_data['feedback'])
             submitted=True
-            
+        
     
     return render(request,'studentApp/index.html',{'form':form,'submitted':submitted})
