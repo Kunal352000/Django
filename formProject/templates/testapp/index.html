@@ -3,33 +3,59 @@
 <html>
 <head>
     <title>My Website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Customize form field appearance */
+        input[type="text"], textarea {
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #4c51bf;
+        }
+
+        input[type="number"], textarea {
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="number"]:focus, textarea:focus {
+            outline: none;
+            border-color: #4c51bf;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="bg-gray-900 text-white py-4">
+        <h1 class="text-2xl text-center">Welcome to My Website</h1>
     </header>
     
-    <main>
-        <h2>Home Page</h2>
-        <p>This is the content of the home page.</p>
+    <main class="container mx-auto mt-8">
+        <h2 class="text-2xl mb-4">Home Page</h2>
+
+        <form class="max-w-md mx-auto">
+            <div class="mb-4">
+                <label for="id_name" class="block mb-2">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="mb-4">
+                <label for="id_marks" class="block mb-2">Marks:</label>
+                {{ form.marks }}
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Submit</button>
+        </form>
     </main>
 
-    <div>
-        <form>
-            {{form}}
-        </form>
-    </div>
-    
-    <footer>
-        <p>&copy; 2023 My Website. All rights reserved.</p>
-    </footer>
 </body>
 </html>
+
+
+
+
+
