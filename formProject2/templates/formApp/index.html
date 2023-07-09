@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Add custom CSS styles here */
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen">
+        <div class="max-w-md mx-auto p-6 bg-white rounded shadow-md">
+            <div>
+                {% if sent %}
+                    <h1 class="text-2xl font-bold">Thank you for submitting the form <br> Submit the new Student Marks</h1>
+                {% else %}
+                    <h1 class="text-2xl font-bold">Student Marks Submit Form</h1>
+                {% endif %}
+            </div>
+            <form method="POST" action="" class="mt-4">
+                {{ form.as_p }}
+                 {%csrf_token%}
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            border: 1px solid #CBD5E0;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</body>
+</html>
+
+
