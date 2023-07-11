@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'static/css/style.css' %}" rel="stylesheet">  
+</head>
+<body>
+    {% for record in records %}
+    <h1>{{record.name}} Information</h1>
+    <ul class="ull">
+        {%load cust_filters%}
+        <li>Name: {{record.name | add:" PVT.LMT"}} </li>
+        <li>Subject: {{record.subject | first_two_upper}}</li>
+        <li>Department: {{record.dept | title }}</li>
+        <li>Date: {{record.date | date:'d-m-Y'}}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+</body>
+</html>
