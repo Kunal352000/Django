@@ -1,5 +1,5 @@
 """
-URL configuration for sessionproject2 project.
+URL configuration for sessionproject3 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -19,8 +19,7 @@ from django.urls import path
 from sessionApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.name_view),
-    path('age/',views.age_view),
-    path('gf/',views.gf_view),
-    path('result/',views.result_view)
+    path('index/',views.index_view),
+    path('additem/',views.additem_view),
+    path('displayitem',views.display_items_view)
 ]
