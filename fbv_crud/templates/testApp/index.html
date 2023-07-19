@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Extends the base template if you are using Django templating system -->
+    {% extends 'testapp/base.html' %}
+
+    <!-- Define the block to be inserted in the base template -->
+    {% block body_block %}
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Employee Information</h1>
+        <div class="overflow-x-auto">
+            <table class="table-auto border-collapse border w-full">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">Employee Number</th>
+                        <th class="px-4 py-2">Employee Name</th>
+                        <th class="px-4 py-2">Employee Salary</th>
+                        <th class="px-4 py-2">Employee Address</th>
+                        <th class="px-4 py-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for emp in emp_list %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ emp.eno }}</td>
+                        <td class="border px-4 py-2">{{ emp.ename }}</td>
+                        <td class="border px-4 py-2">{{ emp.esal }}</td>
+                        <td class="border px-4 py-2">{{ emp.eaddr }}</td>
+                        <td class="border px-4 py-2">
+                            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block mr-2">Update</a>
+                            <a href="#" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block mr-2">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- Center the "Insert new button" below the table -->
+        <div class="flex justify-center mt-4">
+            <a href="/insert" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Insert new button</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
+
