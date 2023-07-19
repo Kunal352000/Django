@@ -8,6 +8,9 @@ def home_page_view(request):
 def java_page_view(request):
     return render(request,'testApp/javaexams.html')
     
-    
+@login_required  
 def python_page_view(request):
     return render(request,'testApp/pythonexams.html')
+
+def logout_view(request):
+    return render(request,'testApp/logout.html')
