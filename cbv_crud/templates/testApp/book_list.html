@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com"></link>
+</head>
+<body>
+    <div class="flex items-center justify-center h-screen">
+        <div class="p-8 bg-gray-100 rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold text-center mb-4">All Books Information</h1>
+            {% for book in book_list %}
+            <ul class="mt-4">
+                <li class="text-xl font-semibold text-blue-600">Title: {{ book.title }}</li>
+                <li class="text-lg">Author: {{ book.author }}</li>
+                <li class="text-lg">Pages: {{ book.pages }}</li>
+                <li class="text-lg">Price: {{ book.price }}</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+
