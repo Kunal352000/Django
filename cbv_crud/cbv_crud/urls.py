@@ -20,8 +20,9 @@ from testApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/',views.BookListView.as_view()),
-    path('home2/',views.BookListView2.as_view()),
+    path('home2/',views.BookListView2.as_view(),name='home'),
     path('<int:pk>/',views.BookDetailView.as_view(),name='detail'),
     path('create/',views.BookCreateView.as_view()),
-    path('update/<int:pk>/',views.BookUpdateView.as_view())
+    path('update/<int:pk>/',views.BookUpdateView.as_view()),
+    path('delete/<int:pk>/',views.BookDeleteView.as_view()),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView,UpdateView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from testApp.models import Book
+from django.urls import reverse_lazy
 # Create your views here.
 class BookListView(ListView):
     model=Book
@@ -27,5 +28,11 @@ class BookCreateView(CreateView):
 
 class BookUpdateView(UpdateView):
     model=Book 
-    fields=('pages','price')
+    # fields=('pages','price')
+    fields = '__all__'
     #The default template is book_form.html
+
+# from django import reverse_lazy
+class BookDeleteView(DeleteView):
+    model=Book 
+    success_url = reverse_lazy('home')

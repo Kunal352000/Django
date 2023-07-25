@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ book.title }} Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
 </head>
-<body>
-    <div>
-        <h1>{{book.title}} Information</h1>
-        <ul>
-            <li>{{book.title}}</li>
-            <li>{{book.author}}</li>
-            <li>{{book.pages}}</li>
-            <li>{{book.price}}</li>
-        </ul>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">{{ book.title }} Information</h1>
+        <div class="bg-white rounded-lg shadow p-4">
+            <ul class="list-disc list-inside text-lg">
+                <li><span class="font-bold">Title:</span> {{ book.title }}</li>
+                <li><span class="font-bold">Author:</span> {{ book.author }}</li>
+                <li><span class="font-bold">Pages:</span> {{ book.pages }}</li>
+                <li><span class="font-bold">Price:</span> {{ book.price }}</li>
+            </ul>
+        </div>
+        <div class="mt-4">
+            <a href="/home2" class="bg-gray-500 text-white px-4 py-2 rounded-md shadow">Home Page</a>
+            <a href="/update/{{ book.id }}" class="bg-blue-500 text-white px-4 py-2 rounded-md shadow">Update Record</a>
+            <a href="/delete/{{book.id}}" class="bg-red-500 text-white px-4 py-2 rounded-md shadow">Delete Record</a>
+        </div>
     </div>
 </body>
 </html>
