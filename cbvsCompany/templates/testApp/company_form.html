@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {%extends 'testApp/base.html'%}
-    {%block body_block%}
-    <h1>Company Insert/Update Form</h1>
-    <form action="" method="POST">
-        {{form.as_p}}
-        {%csrf_token%}
-        <input type='submit' name="" id="" value="Insert/Update Record">
-    </form>    
-    
+{% extends 'testApp/base.html' %}
 
-    {%endblock%}
-</body>
-</html>
+{% block body_block %}
+<div class="min-h-screen bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-4xl font-bold mb-4 text-center text-blue-600">Company Insert/Update Form</h1>
+        <form action="" method="POST" class="space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow">Insert/Update Record</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

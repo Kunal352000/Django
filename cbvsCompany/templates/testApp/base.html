@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
 </head>
-<body>
-    <div>
-        <h1>This line coming from base.html</h1>
-        {%block body_block%}
-        {%endblock%}
+<body class="bg-gradient-to-r from-blue-400 to-purple-500">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold mb-4">This line coming from base.html</h1>
+            {% block body_block %}
+            {% endblock %}
+        </div>
     </div>
 </body>
 </html>
